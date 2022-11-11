@@ -30,7 +30,8 @@
       "@constants/*": ["./src/constants/*"],
       "@utils/*": ["./src/utils/*"],
       "@services": ["./src/services"],
-      "@": ["./src"]
+      "@": ["./src"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],
