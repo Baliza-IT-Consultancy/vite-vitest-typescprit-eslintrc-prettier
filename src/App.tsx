@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { Button } from "@components";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [count, setCount] = useState<number>(0);
