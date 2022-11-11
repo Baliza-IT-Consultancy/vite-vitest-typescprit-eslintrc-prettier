@@ -1,3 +1,2 @@
-const apiURl = "www.google.com";
-// const t = "";
-export default apiURl;
+const apiUrl = "www.google.com";
+export default apiUrl;

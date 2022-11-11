@@ -1,12 +1,16 @@
 import "./App.css";
 
-import { Button } from "@components";
+import { Button, PrimaryLayout } from "@components";
 import { useState } from "react";
 
 function App() {
   const [count, setCount] = useState<number>(0);
 
-  return <Button onclick={() => setCount((prev) => prev + 1)} label={`count ${count}`} />;
+  return (
+    <PrimaryLayout>
+      <Button onclick={() => setCount((Prev) => Prev + 1)} label={`count ${count}`} />
+    </PrimaryLayout>
+  );
 }
 
 export default App;

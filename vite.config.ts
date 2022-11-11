@@ -14,7 +14,7 @@ export default defineConfig({
       reporter: ["text", "json", "html"],
     },
   },
-  base: "/",
+  base: "./",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -1,3 +1,5 @@
+const { default: React } = require("react");
+
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
@@ -52,7 +54,27 @@ module.exports = {
       "warn",
       {
         selector: "variable",
-        format: ["camelCase"],
+        format: ["strictCamelCase", "UPPER_CASE"],
+        leadingUnderscore: "allow",
+        trailingUnderscore: "allow",
+      },
+      {
+        selector: "parameter",
+        format: ["PascalCase"],
+      },
+      {
+        selector: "function",
+        format: ["PascalCase"],
+      },
+      {
+        selector: "typeLike",
+        format: ["PascalCase"],
+        prefix: ["I"],
+      },
+      {
+        selector: "variable",
+        modifiers: ["destructured"],
+        format: null,
       },
     ],
   },
