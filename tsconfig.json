@@ -31,6 +31,9 @@
       "@constants/*": ["./src/constants/*"],
       "@utils/*": ["./src/utils/*"],
       "@services": ["./src/services"],
+      "@pages": ["./src/pages"],
+      "@pages/*": ["./src/pages/*"],
+      "@store": ["./src/store"],
       "@": ["./src"],
       "@/*": ["./src/*"]
     }

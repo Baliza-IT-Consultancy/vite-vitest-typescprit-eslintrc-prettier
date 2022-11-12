@@ -1,2 +1,2 @@
-const apiUrl = "www.google.com";
+const apiUrl = "https://dummyjson.com";
 export default apiUrl;
