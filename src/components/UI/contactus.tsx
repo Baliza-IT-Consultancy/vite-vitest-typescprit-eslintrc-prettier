@@ -7,8 +7,13 @@ export default function ContactUs() {
   const dispatch: IDispatch = useDispatch();
   const formState = useSelector((state: IRootState) => state.contactUsModel);
 
+  function HandleSubmit() {
+    dispatch.contactUsModel.ResetForm();
+  }
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <h1>persist form</h1>
       <input
         placeholder="name"
         value={formState.name}
@@ -31,7 +36,7 @@ export default function ContactUs() {
           dispatch.contactUsModel.HandleAddress(e.target.value)
         }
       />
-      <input type={"button"} placeholder="submit" value={"submit"} />
+      <input type={"button"} placeholder="submit" value={"submit"} onClick={HandleSubmit} />
     </div>
   );
 }

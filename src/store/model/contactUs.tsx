@@ -35,5 +35,10 @@ export const contactUsModel = createModel<IRootModel>()({
         address: payload,
       };
     },
+    ResetForm() {
+      return {
+        ...initialState,
+      };
+    },
   },
 });
