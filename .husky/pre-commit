@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx vitest --coverage --watch false
-npx lint all
+npm run lint
+
