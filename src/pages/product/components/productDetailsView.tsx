@@ -1,8 +1,11 @@
-import { PrimaryLayout } from "@components";
+import { Loading, PrimaryLayout } from "@components";
 import { useProductDetails } from "@hooks";
 import { useParams } from "react-router-dom";
 
-import Loading from "@/components/UI/loading";
+import ProductDescription from "./productDescprition";
+import ProductHeading from "./productHeading";
+import ProductImage from "./productImage";
+import ProductPrice from "./productPrice";
 
 export default function ProductDetailsView() {
   const { id } = useParams();
@@ -12,19 +15,10 @@ export default function ProductDetailsView() {
 
   return (
     <PrimaryLayout>
-      <h3>{data?.title}</h3>
-      <img
-        style={{
-          height: "25em",
-          width: "100%",
-        }}
-        // loading="lazy"
-        src={data?.images[0]}
-        alt="product_image"
-      />
-
-      <p>{data?.description}</p>
-      <p>$ {data?.price}</p>
+      <ProductHeading title={data?.title} />
+      <ProductImage title={data?.title} thumbnail={data?.thumbnail} />
+      <ProductDescription description={data?.description} />
+      <ProductPrice price={data?.price} />
     </PrimaryLayout>
   );
 }

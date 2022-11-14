@@ -19,6 +19,7 @@ export default function UseProductList() {
     {
       initialData: () => {
         const previousResult = queryClient.getQueryData(queries.ProductQuery);
+
         if (previousResult) {
           const typedResponse = previousResult as IInitialProductState;
 

@@ -1,8 +1,6 @@
-import { Button } from "@components";
+import { Button, Loading } from "@components";
 import { useProductList } from "@hooks";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-
-import Loading from "@/components/UI/loading";
 
 export default function ProductList(): JSX.Element {
   const navigate: NavigateFunction = useNavigate();

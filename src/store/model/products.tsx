@@ -18,12 +18,15 @@ const productModel = createModel<IRootModel>()({
   state: initialState, // initial state
   reducers: {
     // handle state changes with pure functions
-    setProducts(state, payload) {
+    setProducts(state, payload: IInitialProductState) {
       return {
         ...state,
         products: payload.products,
         loading: payload.loading,
         error: payload.error,
+        limit: payload.limit,
+        skip: payload.skip,
+        total: payload.total,
       };
     },
     setSingleProduct(state, payload) {
