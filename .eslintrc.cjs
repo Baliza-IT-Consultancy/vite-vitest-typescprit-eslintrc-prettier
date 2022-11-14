@@ -60,7 +60,7 @@ module.exports = {
       },
       {
         selector: "parameter",
-        format: ["PascalCase"],
+        format: ["strictCamelCase"],
       },
       {
         selector: "function",

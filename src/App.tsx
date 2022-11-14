@@ -1,15 +1,14 @@
 import "./App.css";
 
-import { Button, PrimaryLayout } from "@components";
-import { useState } from "react";
+import AppRoutes from "@pages";
+import queryClient from "@utils/reactQuery.util";
+import { QueryClientProvider } from "react-query";
 
 function App() {
-  const [count, setCount] = useState<number>(0);
-
   return (
-    <PrimaryLayout>
-      <Button onclick={() => setCount((Prev) => Prev + 1)} label={`count ${count}`} />
-    </PrimaryLayout>
+    <QueryClientProvider client={queryClient}>
+      <AppRoutes />
+    </QueryClientProvider>
   );
 }
 
