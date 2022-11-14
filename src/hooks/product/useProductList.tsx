@@ -1,10 +1,10 @@
 import queries from "@constants/query";
 import { IInitialProductState } from "@MyTypes/product.type";
 import { useQuery, useQueryClient } from "react-query";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { IProductService } from "@/services/ProductService.Service";
-import { IDispatch, IRootState } from "@/store/store";
+import { IDispatch } from "@/store/store";
 
 export default function UseProductList() {
   const queryClient = useQueryClient();
