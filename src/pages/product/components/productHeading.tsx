@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 type IProductHeading = {
   title?: string;
   size?: string | number;
@@ -5,7 +6,15 @@ type IProductHeading = {
 
 export default function ProductHeading(prop: IProductHeading) {
   return (
-    <p
+    <motion.p
+      initial={{
+        opacity: 0,
+        x: -10,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
       style={{
         fontSize: prop.size || 50,
         color: "GrayText",
@@ -14,6 +23,6 @@ export default function ProductHeading(prop: IProductHeading) {
       }}
     >
       {prop.title}
-    </p>
+    </motion.p>
   );
 }
