@@ -1,7 +1,10 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { IDispatch, IRootState } from "@/store/store";
+
+import Button from "./button";
 
 export default function ContactUs() {
   const dispatch: IDispatch = useDispatch();
@@ -12,9 +15,25 @@ export default function ContactUs() {
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-      <h1>persist form</h1>
-      <input
+    <motion.div layout style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+      <motion.h1
+        style={{
+          textTransform: "capitalize",
+        }}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          transition: {
+            ease: "easeIn",
+          },
+        }}
+      >
+        persist form
+      </motion.h1>
+      <motion.input
         placeholder="name"
         value={formState.name}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -22,21 +41,22 @@ export default function ContactUs() {
         }
       />
 
-      <input
+      <motion.input
         placeholder="phone"
         value={formState.phone}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           dispatch.contactUsModel.HandlePhone(e.target.value)
         }
       />
-      <input
+      <motion.input
         placeholder="address"
         value={formState.address}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           dispatch.contactUsModel.HandleAddress(e.target.value)
         }
       />
-      <input type={"button"} placeholder="submit" value={"submit"} onClick={HandleSubmit} />
-    </div>
+      <Button onclick={HandleSubmit} label="submit" />
+      {/* <input type={"button"} placeholder="submit" value={"submit"} onClick={HandleSubmit} /> */}
+    </motion.div>
   );
 }
