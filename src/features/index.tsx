@@ -1,16 +1,15 @@
 // import { useCallback, useState } from "react";
-import MapGL, { Layer, LayerProps, Marker } from "react-map-gl";
+
+import MapGL, { Layer, LayerProps, Marker, Source } from "react-map-gl";
 
 import DrawControl from "./map/components/drawBoxControl";
 
 const parkLayer: LayerProps = {
-  id: "landuse_park",
+  id: "data",
   type: "fill",
-  source: "mapbox",
-  "source-layer": "landuse",
-  filter: ["==", "class", "park"],
   paint: {
-    "fill-color": "#4E3FC8",
+    "fill-color": "blue",
+    "fill-opacity": 0.2,
   },
 };
 
@@ -55,6 +54,13 @@ export default function MapComponent() {
   //     //   return newFeatures;
   //     // });
   //   }, []);
+  const onDrawCreate = ({ features }: any) => {
+    console.log(features);
+  };
+
+  const onDrawUpdate = ({ features }: any) => {
+    console.log(features);
+  };
   return (
     <div
       style={{
@@ -81,16 +87,44 @@ export default function MapComponent() {
         <DrawControl
           position="top-left"
           displayControlsDefault={true}
-          //   controls={{
-          //     polygon: true,
-          //     trash: true,
-          //     combine_features: true,
-          //     line_string: true,
-          //   }}
-          //   defaultMode="draw_polygon"
-          //   onCreate={onUpdate}
+          controls={{
+            polygon: true,
+            trash: true,
+            combine_features: false,
+            line_string: false,
+            uncombine_features: false,
+          }}
+          onCreate={onDrawCreate}
+          onUpdate={onDrawUpdate}
         />
-        <Layer {...parkLayer} />
+        <Source
+          type="geojson"
+          data={{
+            type: "FeatureCollection",
+            features: [
+              {
+                type: "Feature",
+                properties: {},
+                geometry: {
+                  type: "MultiPolygon",
+                  coordinates: [
+                    [
+                      [
+                        [-100.10231018066392, 40.06860861962642],
+                        [-100.10711669921885, 40.00499682642237],
+                        [-99.98283386230456, 39.998684984898176],
+                        [-99.97665405273449, 40.07386313779287],
+                        [-100.10231018066392, 40.06860861962642],
+                      ],
+                    ],
+                  ],
+                },
+              },
+            ],
+          }}
+        >
+          <Layer {...parkLayer} />
+        </Source>
       </MapGL>
     </div>
   );
