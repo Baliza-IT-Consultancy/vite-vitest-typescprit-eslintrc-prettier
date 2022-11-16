@@ -1,15 +1,17 @@
-import { Button, Loading } from "@components";
+import { Loading } from "@components";
 import { useProductList } from "@hooks";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
+// import { NavigateFunction, useNavigate } from "react-router-dom";
+import ProductCard from "./productCard";
 export default function ProductList(): JSX.Element {
-  const navigate: NavigateFunction = useNavigate();
+  // const navigate: NavigateFunction = useNavigate();
 
   const { data, isLoading, isError } = useProductList();
 
-  function HandleNavigation(id: number) {
-    navigate(`/products/${id}`);
-  }
+  // function HandleNavigation(id: number) {
+  //   navigate(`/products/${id}`);
+  // }
 
   if (isLoading) {
     return <Loading />;
@@ -20,12 +22,24 @@ export default function ProductList(): JSX.Element {
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
+    <motion.div
+      animate={{
+        transition: {
+          staggerChildren: 0.08,
+        },
+      }}
+      layout
+      style={{ display: "flex", flexDirection: "column", gap: 9 }}
+    >
       {data?.products
-        ? data?.products.map((el) => {
-            return <Button key={el.id} onclick={() => HandleNavigation(el.id)} label={el.title} />;
+        ? data?.products.map((el, idx) => {
+            return (
+              <AnimatePresence key={el.id}>
+                <ProductCard image={el.thumbnail} title={el.title} />
+              </AnimatePresence>
+            );
           })
         : "no products found"}
-    </div>
+    </motion.div>
   );
 }
