@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+// import { useCallback, useState } from "react";
 import MapGL, { Layer, LayerProps, Marker } from "react-map-gl";
 
 import DrawControl from "./map/components/drawBoxControl";
@@ -23,38 +23,38 @@ const token =
 //   { id: "editing", text: "Edit Feature", handler: EditingMode },
 // ];
 
-const DEFAULT_VIEWPORT = {
-  width: 800,
-  height: 600,
-  longitude: -122.45,
-  latitude: 37.78,
-  zoom: 14,
-};
+// const DEFAULT_VIEWPORT = {
+//   width: 800,
+//   height: 600,
+//   longitude: -122.45,
+//   latitude: 37.78,
+//   zoom: 14,
+// };
 
 export default function MapComponent() {
-  const [features, setFeatures] = useState({});
+  //   const [features, setFeatures] = useState({});
 
-  const onUpdate = useCallback((e: unknown) => {
-    console.log(e);
-    // setFeatures((currFeatures) => {
-    //   const newFeatures = { ...currFeatures };
-    //   for (const f of e.features) {
-    //     newFeatures[f.id] = f;
-    //   }
-    //   return newFeatures;
-    // });
-  }, []);
+  //   const onUpdate = useCallback((e: unknown) => {
+  //     console.log(e);
+  //     // setFeatures((currFeatures) => {
+  //     //   const newFeatures = { ...currFeatures };
+  //     //   for (const f of e.features) {
+  //     //     newFeatures[f.id] = f;
+  //     //   }
+  //     //   return newFeatures;
+  //     // });
+  //   }, []);
 
-  const onDelete = useCallback((e: unknown) => {
-    console.log(e);
-    // setFeatures((currFeatures) => {
-    //   const newFeatures = { ...currFeatures };
-    //   for (const f of e.features) {
-    //     delete newFeatures[f.id];
-    //   }
-    //   return newFeatures;
-    // });
-  }, []);
+  //   const onDelete = useCallback((e: unknown) => {
+  //     console.log(e);
+  //     // setFeatures((currFeatures) => {
+  //     //   const newFeatures = { ...currFeatures };
+  //     //   for (const f of e.features) {
+  //     //     delete newFeatures[f.id];
+  //     //   }
+  //     //   return newFeatures;
+  //     // });
+  //   }, []);
   return (
     <div
       style={{
