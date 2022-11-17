@@ -34,7 +34,8 @@
       "@pages": ["./src/pages"],
       "@pages/*": ["./src/pages/*"],
       "@": ["./src"],
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@features": ["./src/features/*"]
     }
   },
   "include": ["src"],

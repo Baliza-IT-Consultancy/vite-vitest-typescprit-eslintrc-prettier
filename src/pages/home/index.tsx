@@ -1,16 +1,20 @@
-import { Button, ContactUs } from "@components";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+// import { Button, ContactUs } from "@components";
+// import { NavigateFunction, useNavigate } from "react-router-dom";
+
+import CodeEditor from "@/features/codeEditor";
 
 export default function Home() {
-  const navigate: NavigateFunction = useNavigate();
+  // const navigate: NavigateFunction = useNavigate();
 
-  function HandleNav(): void {
-    navigate("/products");
-  }
+  // function HandleNav(): void {
+  //   navigate("/products");
+  // }
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-      <ContactUs />
-      <Button label="show Products" onclick={HandleNav} />
+    <div>
+      {/* <ContactUs /> */}
+      {/* <MapComponent /> */}
+      <CodeEditor />
+      {/* <Button label="show Products" onclick={HandleNav} /> */}
     </div>
   );
 }
