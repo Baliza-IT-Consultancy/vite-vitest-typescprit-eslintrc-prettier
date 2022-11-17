@@ -32,7 +32,7 @@ export default function ProductList(): JSX.Element {
       style={{ display: "flex", flexDirection: "column", gap: 9 }}
     >
       {data?.products
-        ? data?.products.map((el, idx) => {
+        ? data?.products.map((el) => {
             return (
               <AnimatePresence key={el.id}>
                 <ProductCard image={el.thumbnail} title={el.title} />
