@@ -123,13 +123,13 @@ npm install
 
   
 
-👤 **souvik dutta**
+👤 **baliza.io**
 
   
 
-* Website: https://souvikdutta.netlify.app/
+* Website: baliza.io
 
-* Github: [@souvik666](https://github.com/souvik666)
+
 
   
 
