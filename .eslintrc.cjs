@@ -64,7 +64,7 @@ module.exports = {
       },
       {
         selector: "function",
-        format: ["PascalCase"],
+        format: ["PascalCase", "strictCamelCase"],
       },
       {
         selector: "typeLike",
